@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RPG Creature Search App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 RPG Creature Search <span id="fire-anim" class="fire-anim"></span></h1>
+    <div class="search-bar">
+      <input id="search-input" type="text" placeholder="Enter name or ID..." required>
+      <button id="search-button">Search</button>
+      <button id="show-create" title="Create New Creature">＋</button>
+    </div>
+    <div id="not-found" class="not-found hidden">
+      <div class="funny-face">¯\_(ツ)_/¯</div>
+      <div>Creature not found!</div>
+    </div>
+    <div class="creature-info" id="creature-info">
+      <div class="creature-anim" id="creature-anim"></div>
+      <div>Name: <span id="creature-name"></span></div>
+      <div>ID: <span id="creature-id"></span></div>
+      <div>Weight: <span id="weight"></span></div>
+      <div>Height: <span id="height"></span></div>
+      <div>Types: <span id="types"></span></div>
+      <div>HP: <span id="hp"></span></div>
+      <div>Attack: <span id="attack"></span></div>
+      <div>Defense: <span id="defense"></span></div>
+      <div>Special Attack: <span id="special-attack"></span></div>
+      <div>Special Defense: <span id="special-defense"></span></div>
+      <div>Speed: <span id="speed"></span></div>
+    </div>
+    <form id="create-form" class="hidden">
+      <h2>Create New Creature</h2>
+      <input type="text" id="new-name" placeholder="Name" required>
+      <input type="number" id="new-id" placeholder="ID" required>
+      <input type="number" id="new-weight" placeholder="Weight" required>
+      <input type="number" id="new-height" placeholder="Height" required>
+      <input type="text" id="new-types" placeholder="Types (comma separated)" required>
+      <input type="number" id="new-hp" placeholder="HP" required>
+      <input type="number" id="new-attack" placeholder="Attack" required>
+      <input type="number" id="new-defense" placeholder="Defense" required>
+      <input type="number" id="new-special-attack" placeholder="Special Attack" required>
+      <input type="number" id="new-special-defense" placeholder="Special Defense" required>
+      <input type="number" id="new-speed" placeholder="Speed" required>
+      <button type="submit">Add Creature</button>
+      <button type="button" id="cancel-create">Cancel</button>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
