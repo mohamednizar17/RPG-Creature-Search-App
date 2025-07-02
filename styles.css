@@ -1,0 +1,235 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #18192a;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #35424a;
+  color: #ffffff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 2em;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.container {
+  max-width: 430px;
+  margin: 40px auto;
+  background: #23243a;
+  padding: 2em 2em 1em 2em;
+  border-radius: 16px;
+  box-shadow: 0 0 24px #1118;
+  position: relative;
+  overflow: hidden;
+}
+
+footer {
+  background: #35424a;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.fire-anim {
+  display: none;
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+#search-input {
+  flex: 1;
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
+  transition: box-shadow 0.3s;
+}
+
+#search-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ff9800;
+}
+
+#search-button, #show-create {
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  background: #ff9800;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+#search-button:hover, #show-create:hover {
+  background: #ffa726;
+  transform: scale(1.08);
+}
+
+#show-create {
+  background: #4caf50;
+  margin-left: 0.2em;
+}
+
+#show-create:hover {
+  background: #66bb6a;
+}
+
+.creature-info {
+  background: #23243a;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0004;
+  transition: box-shadow 0.3s;
+  margin-bottom: 1em;
+  animation: fadeIn 0.7s;
+}
+
+.creature-info > div {
+  margin-bottom: 0.5em;
+  transition: color 0.2s;
+}
+
+.creature-info > div:hover {
+  color: #ff9800;
+}
+
+#types {
+  display: flex;
+  gap: 0.5em;
+}
+
+.type-badge {
+  background: #444;
+  color: #fff;
+  padding: 0.2em 0.7em;
+  border-radius: 12px;
+  font-size: 0.9em;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+
+.type-badge:hover {
+  background: #ff9800;
+  color: #23243a;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.type-fire { background: linear-gradient(90deg, #ff9800 60%, #ff5722 100%); color: #fff; }
+.type-water { background: linear-gradient(90deg, #2196f3 60%, #00bcd4 100%); color: #fff; }
+.type-rock { background: linear-gradient(90deg, #a1887f 60%, #6d4c41 100%); color: #fff; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.fire {
+  width: 60px; height: 60px;
+  margin: 0 auto 1em auto;
+  position: relative;
+}
+
+.fire:before, .fire:after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: fireUp 1s infinite alternate;
+}
+
+.fire:before {
+  width: 60px; height: 60px;
+  background: radial-gradient(circle at 50% 60%, #ff9800 60%, transparent 70%);
+  z-index: 1;
+  animation-delay: 0.1s;
+}
+
+.fire:after {
+  width: 40px; height: 40px;
+  background: radial-gradient(circle at 50% 40%, #ff5722 70%, transparent 80%);
+  z-index: 2;
+}
+
+@keyframes fireUp {
+  0% { transform: translate(-50%, -50%) scaleY(1);}
+  100% { transform: translate(-50%, -60%) scaleY(1.2);}
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #2d2d44;
+  border-radius: 10px;
+  padding: 1em;
+  margin-bottom: 1em;
+  animation: shake 0.7s;
+}
+
+.not-found .funny-face {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  animation: bounce 1s infinite alternate;
+}
+
+.hidden { display: none !important; }
+
+@keyframes shake {
+  0% { transform: translateX(0);}
+  20% { transform: translateX(-10px);}
+  40% { transform: translateX(10px);}
+  60% { transform: translateX(-10px);}
+  80% { transform: translateX(10px);}
+  100% { transform: translateX(0);}
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-10px);}
+}
+
+#create-form {
+  background: #23243a;
+  border-radius: 10px;
+  padding: 1em;
+  margin-top: 1em;
+  box-shadow: 0 2px 8px #0004;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+  animation: fadeIn 0.7s;
+}
+
+#create-form input {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: none;
+  font-size: 1em;
+  transition: box-shadow 0.3s;
+}
+
+#create-form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #ff9800;
+}
